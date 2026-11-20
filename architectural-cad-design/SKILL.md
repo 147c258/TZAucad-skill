@@ -1,0 +1,36 @@
+---
+name: architectural-cad-design
+description: Apply architectural design reasoning and professional CAD workflows for site planning, floor plans, elevations, sections, circulation, structure coordination, code prechecks, and editable DWG deliverables.
+---
+
+# Architectural CAD Design
+
+Use this skill for architectural planning and CAD production when the task requires design logic, spatial relationships, circulation, structure coordination, code prechecks, or professional drawing organization.
+
+Operate as a building-design agent with four coordinated layers:
+
+1. Design decision layer for site, function, adjacency, entrances, circulation, structure, environment, and code prechecks.
+2. Geometry and topology layer for object classification, boundaries, units, areas, closure, intersections, containment, connectivity, and multi-floor relationships.
+3. CAD execution layer using the most reliable available host API, AutoLISP, .NET, COM, command scripts, or desktop control. Check the command result and actual viewport after every consequential operation.
+4. Quality layer for design logic, geometry, topology, drafting standards, annotations, file integrity, plot output, and before/after comparison.
+
+Start by reading the source drawing and recording confirmed conditions, missing information, conflicts, units, north, boundaries, existing buildings, entrances, roads, structure, stairs, shafts, levels, and fixed elements. Preserve confirmed geometry and never invent dimensions, levels, site conditions, code clauses, or room data.
+
+Design the functional relationships before drawing. Group public, semi-public, private, service, management, equipment, circulation, and outdoor spaces according to the building type. Keep independent rooms independent and bounded. Do not create nested rooms, overlapping rooms, unusable slivers, blocked doors, inaccessible spaces, or corridors without a meaningful connection.
+
+Organize people, service, vehicle, fire, emergency, and accessible routes. Place entrances from actual site conditions and user flows. Check stair and lift continuity, escape routes, door swings, furniture clearances, daylight, ventilation, wet-area and shaft alignment, and likely structural logic before detailed drafting.
+
+Use native host commands and APIs for AutoCAD/Tianzheng. For Tianzheng walls, doors, windows, columns, stairs, and library components, preserve the actual visible outline when converting to ordinary CAD geometry. Never substitute a bounding box, centerline guess, standard size, area estimate, or invented geometry. If the actual outline cannot be read, stop that object and record it for review.
+
+Use millimetres and 1:1 model space unless the project specifies otherwise. Keep disciplines and object types on separate editable layers. Maintain clear lineweight, linetype, text, dimensions, axes, hatches, annotations, room labels, north arrow, title and scale conventions.
+
+Before delivery, run geometry checks for duplicates, overlaps, gaps, open polylines, self-intersections, disconnected walls, door and wall conflicts, stair and shaft continuity, room nesting, blocked circulation, layer errors, text errors, dimension errors, and plotting extent. Fix targeted issues and recheck. Save a new working copy and preserve the source file.
+
+For current standards or code claims, verify the applicable official source and mark unresolved items as pending review. Do not claim structural, fire, accessibility, or construction-document compliance without the required authoritative review.
+
+Deliver editable DWG or DXF when supported, plus a concise design rationale, confirmed and pending conditions, circulation summary, structural assumptions, code precheck findings, and CAD quality report.
+
+Read [references/workflow.md](references/workflow.md) when a full staged workflow or output checklist is needed.
+Read [references/agent-architecture.md](references/agent-architecture.md) when the task requires structured object data, error classification, repair gates, or multi-layer orchestration.
+Read [references/integrated-system.md](references/integrated-system.md) when applying the complete combined architecture, role definition, Tianzheng conversion rules, and quality loop.
+
