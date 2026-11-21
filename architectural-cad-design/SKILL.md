@@ -5,6 +5,14 @@ description: Apply architectural design reasoning and professional CAD workflows
 
 # Architectural CAD Design
 
+## 强制执行规则
+
+必须严格按本 Skill 和相关参考文件中的步骤顺序执行。不得跳过图纸读取、条件核实、建筑分析、功能与流线分析、方案布局、正式绘制、质量检查、问题修复、实际画面复核或成果交付中的任何步骤。每一步都要有可核查的结果，结果缺失时停止后续绘制并报告缺失项。
+
+禁止编造式制图。不得凭空补造尺寸、标高、面积、房间功能、入口、道路、结构、墙体、门窗、楼梯、规范条款或场地条件。无法从图纸、宿主软件、用户资料或可靠规范来源确认的内容必须标记为“待核实”，不得作为已知条件绘制。
+
+执行成功、命令无报错或模型生成完成不等于步骤完成。必须检查实际 CAD 图形、对象关系和保存结果。任何步骤发现数据冲突、轮廓无法读取、空间关系不明确或几何验证失败时，暂停该分支并保留问题记录。
+
 Use this skill for architectural planning and CAD production when the task requires design logic, spatial relationships, circulation, structure coordination, code prechecks, or professional drawing organization.
 
 Operate as a building-design agent with four coordinated layers:
