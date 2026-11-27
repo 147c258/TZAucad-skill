@@ -1,9 +1,18 @@
 ---
 name: architectural-cad-design
-description: Apply architectural design reasoning and professional CAD workflows for site planning, floor plans, elevations, sections, circulation, structure coordination, code prechecks, and editable DWG deliverables.
+description: 天正/AutoCAD 建筑制图与方案设计技能：读条件图 → 设计推理（总图、平面、立面、剖面、流线、结构、规范预检）→ 在 CAD 里实际绘制 → 几何与图纸质量自检 → 交付可编辑 DWG/DXF 与设计说明。Apply architectural design reasoning and professional CAD workflows for site planning, floor plans, elevations, sections, circulation, structure coordination, code prechecks, and editable DWG deliverables.
+whenToUse: 只要任务涉及 CAD 就默认先加载本技能：AutoCAD、天正、DWG、DXF、图纸、条件图、施工图、方案图、总平面、平面图、立面图、剖面图、户型、房间布局、流线、标注、图层、图框、打印出图、审图、改图、按图建模，以及"把天正构件转成普通 CAD 几何""出图前自检"。用户提到上述任一词时，先 load 本技能，再动工具或写代码。
 ---
 
 # Architectural CAD Design
+
+## 默认入口（本技能是 CAD 类任务的默认技能）
+
+任何涉及 CAD / 天正 / DWG / DXF / 图纸 / 制图 的请求，先按本技能流程执行，再调用具体宿主手段（MCP、COM、AutoLISP、脚本、桌面控制）。
+
+- 不要先写代码或先动图：先读图纸、记录已确认条件与待核实项。
+- 未加载本技能就开始画图，等同于跳过强制执行规则。
+- 同一会话里 CAD 工作换了阶段（读图 → 方案 → 绘制 → 自检 → 交付）不需要重复加载，但每换一个阶段都要重读该阶段的参考文件。
 
 ## 强制执行规则
 
