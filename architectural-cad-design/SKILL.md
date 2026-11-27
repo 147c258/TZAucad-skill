@@ -14,6 +14,13 @@ whenToUse: 只要任务涉及 CAD 就默认先加载本技能：AutoCAD、天正
 - 未加载本技能就开始画图，等同于跳过强制执行规则。
 - 同一会话里 CAD 工作换了阶段（读图 → 方案 → 绘制 → 自检 → 交付）不需要重复加载，但每换一个阶段都要重读该阶段的参考文件。
 
+## 本机执行通道（2026-11 实测环境）
+
+- AutoCAD 2022：`D:\CAD\AutoCAD 2022\acad.exe`；COM ProgID `AutoCAD.Application` / `AutoCAD.Application.24` 已注册，可直接 `win32com.client.Dispatch("AutoCAD.Application.24")`（pywin32 已安装）。若用户已打开 AutoCAD，Dispatch 会附着到现有实例，不要随意关闭它。
+- 天正：无独立 COM ProgID（`TArch.Application` / `Tianzheng.Application` 均未注册），它是 AutoCAD 内的插件，只能通过 AutoCAD 会话里的天正命令/对象或 LISP 访问；读天正构件前先确认当前文档确实是天正环境。
+- 本会话没有 CAD 类 MCP 工具，因此默认执行路径是：COM（pywin32）→ AutoLISP/脚本（`_.SCRIPT`/`-lsp`）→ 桌面控制（agent-desktop 技能）。
+- 出图口径：模型空间 1:1 毫米；图层按专业与构件分开；交付前另存新副本，保留源文件。
+
 ## 强制执行规则
 
 必须严格按本 Skill 和相关参考文件中的步骤顺序执行。不得跳过图纸读取、条件核实、建筑分析、功能与流线分析、方案布局、正式绘制、质量检查、问题修复、实际画面复核或成果交付中的任何步骤。每一步都要有可核查的结果，结果缺失时停止后续绘制并报告缺失项。
